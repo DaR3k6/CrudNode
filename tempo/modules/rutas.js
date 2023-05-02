@@ -70,13 +70,13 @@ ruta.put("/api/users/:id", (req, res) => {
 //Verbo DELETE ELIMINAR
 ruta.delete("/api/users/:id", (req, res) => {
   let id = req.params.id;
-  conex.query("DELETE FROM users WHERE id = ?", id, (error, respuesta) => {
-    if (error) {
-      console.log(error);
-    } else {
-      res.status(201).send(respuesta);
-    }
-  });
+  conex.query("DELETE FROM users WHERE id = ?", id),(error, respuesta) => {
+      if (error) {
+        console.log(error);
+      } else {
+        res.status(201).send(respuesta);
+      }
+      };
 });
 
 module.exports = ruta;
